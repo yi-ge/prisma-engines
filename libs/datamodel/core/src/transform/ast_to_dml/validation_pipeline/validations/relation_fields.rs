@@ -3,8 +3,7 @@ use crate::{
     diagnostics::{DatamodelError, Diagnostics},
     transform::ast_to_dml::db::walkers::{ModelWalker, RelationFieldWalker, RelationName},
 };
-use datamodel_connector::{Connector, ReferentialIntegrity};
-use dml::relation_info::ReferentialAction;
+use datamodel_connector::Connector;
 use itertools::Itertools;
 use std::fmt;
 
