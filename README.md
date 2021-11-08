@@ -22,9 +22,11 @@ The engines and their respective binary crates are:
   choice.
 - Linux only: OpenSSL is required to be installed.
 - Installed [direnv](https://github.com/direnv/direnv), then `direnv allow` on
-  the repository root.
+  the repository root. 
+    - Make sure direnv is [hooked](https://direnv.net/docs/hook.html) into your shell
     - Alternatively: Load the defined environment in `./.envrc` manually in your
       shell.
+- Installed [Protocol Buffers](https://grpc.io/docs/protoc-installation/)
 
 **How to build:**
 
