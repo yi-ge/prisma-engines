@@ -139,6 +139,7 @@ pub struct Column<'a> {
     pub default: Option<Cow<'a, str>>,
     pub auto_increment: bool,
     pub primary_key: bool,
+    pub comment: Option<Cow<'a, str>>,
     pub references: Option<ForeignKey<'a>>,
 }
 
@@ -165,6 +166,11 @@ impl Display for Column<'_> {
         if let Some(default) = &self.default {
             f.write_str(" DEFAULT ")?;
             f.write_str(default.as_ref())?;
+        }
+
+        if let Some(comment) = &self.comment {
+            f.write_str(" COMMENT ")?;
+            f.write_str(comment.as_ref())?;
         }
 
         if let Some(references) = &self.references {
